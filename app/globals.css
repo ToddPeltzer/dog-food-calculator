@@ -5,6 +5,8 @@
 html {
     background-color: #FBF9F1;
     color: #5E160F;
+    height: 100dvh;
+    box-sizing: border-box;
 }
 
 main {
@@ -52,4 +54,53 @@ button {
     border-radius: 10px;
     font-weight: 500;
     border-radius: 32px;
+}
+
+/* .paw {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    fill: #F4ECD4;
+    z-index: -1;
+} */
+
+.form-cntnr {
+    position: relative;
+}
+
+.paw-1,
+.paw-2  {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: #F4ECD4; 
+    z-index: -1;
+}
+
+.paw-1 {
+    top: -30%;
+    left: -100%;
+    transform: scale(.25) rotate(15deg);
+}
+
+.paw-2 {
+    bottom:-30%;
+    right: -100%;
+    transform: scale(.25) rotate(-15deg);
+}
+
+@media (max-width: 400px) {
+    .paw-1 {
+        left: -80%;
+    }
+    
+    .paw-2 {
+        right: -80%;
+    }
 }

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import useDogsQuery from './useDogsQuery'
+import PawPrintIcon from '../assets/PawPrintIcon'
 
 // types to be used for the inputs in the form
 interface DogFormProps {
@@ -34,56 +35,64 @@ const DogFoodForm: React.FC<DogFormProps> = ({ onCalculate }) => {
     };
 
   return (
-    <form className='mt-5 mb-5'>
-        <div className='blk'>
-            <div className='input-cntnr'>
-                <label htmlFor='breed'>Name:</label>
-                <input
-                    type='text'
-                    id='breed'
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-            </div>
-            <div className='input-cntnr'>
-                <label htmlFor='breed'>Breed:</label>
-                <select
-                    id='breed'
-                    value={breed}
-                    onChange={(e) => setBreed(e.target.value)}
-                >
-                    {data?.message && Object.keys(data.message).map((messages) => {
-                        return (
-                            <option key={messages}>{messages}</option>
-                        )
-                    }) 
+    <div className='form-cntnr'>
+        <form className='mt-5 mb-5'>
+            <div className='blk'>
+                <div className='input-cntnr'>
+                    <label htmlFor='breed'>Name:</label>
+                    <input
+                        type='text'
+                        id='breed'
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                </div>
+                <div className='input-cntnr'>
+                    <label htmlFor='breed'>Breed:</label>
+                    <select
+                        id='breed'
+                        value={breed}
+                        onChange={(e) => setBreed(e.target.value)}
+                    >
+                        {data?.message && Object.keys(data.message).map((messages) => {
+                            return (
+                                <option key={messages}>{messages}</option>
+                            )
+                        }) 
 
-                    }
-                </select>
+                        }
+                    </select>
+                </div>
+                <div className='input-cntnr'>
+                    <label htmlFor='weight'>Weight (lbs):</label>
+                    <input
+                        type='text'
+                        id='weight'
+                        value={weight}
+                        onChange={handleWeightChange}
+                    />
+                </div>
+                <div className='input-cntnr'>
+                    <label htmlFor='age'>Age:</label>
+                    <input
+                        type='text'
+                        id='age'
+                        value={age}
+                        onChange={handleAgeChange}
+                    />
+                </div>
             </div>
-            <div className='input-cntnr'>
-                <label htmlFor='weight'>Weight (lbs):</label>
-                <input
-                    type='text'
-                    id='weight'
-                    value={weight}
-                    onChange={handleWeightChange}
-                />
+            <div className='mt-5 mb-5 flx btn-cntnr'>
+                <button type='button' onClick={handleCalculate}>Calculate</button>
             </div>
-            <div className='input-cntnr'>
-                <label htmlFor='age'>Age:</label>
-                <input
-                    type='text'
-                    id='age'
-                    value={age}
-                    onChange={handleAgeChange}
-                />
-            </div>
+        </form>
+        <div className='paw-1'>
+            <PawPrintIcon />
         </div>
-        <div className='mt-5 mb-5 flx btn-cntnr'>
-            <button type='button' onClick={handleCalculate}>Calculate</button>
+        <div className='paw-2'>
+            <PawPrintIcon />
         </div>
-    </form>
+    </div>
   )
 }
 

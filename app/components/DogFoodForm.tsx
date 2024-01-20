@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useState } from 'react'
 
 // types to be used for the inputs in the form
@@ -8,7 +9,7 @@ interface DogFormProps {
 
 // react functional component passing in the types (defined above) and then passing the onCalculate function so we can set the parameters from the input fields
 const DogFoodForm: React.FC<DogFormProps> = ({ onCalculate }) => {
-
+ 
     const [breed, setBreed] = useState<string>('')
     const [weight, setWeight] = useState<number>(0)
     const [age, setAge] = useState<number>(0)

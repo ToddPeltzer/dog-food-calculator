@@ -20,12 +20,12 @@ const DogFoodForm: React.FC<DogFormProps> = ({ onCalculate }) => {
 
     const handleWeightChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value.replace(/[^0-9]/g, ''); // Allow only numeric characters
-        setWeight(value || ''); // Set the value or an empty string if it's not a number
+        setWeight(value === '' ? 0 : parseInt(value, 10)); // Set the value to 0 if nothing, else set to the number provided
     };
 
     const handleAgeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value.replace(/[^0-9]/g, '');
-        setAge(value || '');
+        setAge(value === '' ? 0 : parseInt(value, 10));
     };
 
   return (

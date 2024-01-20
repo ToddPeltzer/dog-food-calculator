@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+button {
+    background-color: lightcoral!important;
+    border: 1px solid lightcoral;
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+}

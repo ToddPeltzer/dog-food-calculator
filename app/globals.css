@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    background-color: #FBF9F1;
+    color: #5E160F;
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -14,38 +19,37 @@ main h1 {
     text-wrap: pretty;
 }
 
-input {
-    border: 1px solid black;
+input,
+select {
+    border: 1px solid #000000;
     border-radius: 10px;
     margin-left: 5px;
     margin-right: 5px;
     padding: 5px;
+    display: block;
+    width: 100%;
+}
+
+select {
+    padding: 7px 5px;
+}
+
+.input-cntnr:not(:first-child) {
+    margin-top: 1rem;
+}
+
+.btn-cntnr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
-    background-color: lightcoral!important;
-    border: 1px solid lightcoral;
-    padding: 5px;
+    color: #FFFFFF;
+    background-color: #EC3925!important;
+    border: 1px solid #EC3925;
+    padding: 16px 32px;
     border-radius: 10px;
-    font-weight: bold;
-}
-
-.flx {
-    display: block;
-}
-
-.f_sb {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-@media (min-width: 1024px) {
-    .flx {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    font-weight: 500;
+    border-radius: 32px;
 }

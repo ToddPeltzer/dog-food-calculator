@@ -29,32 +29,37 @@ const DogFoodForm: React.FC<DogFormProps> = ({ onCalculate }) => {
     };
 
   return (
-    <form>
-        <label htmlFor='breed'>Breed:</label>
-        <input
-            type='text'
-            id='breed'
-            value={breed}
-            onChange={(e) => setBreed(e.target.value)}
-        />
-
-        <label htmlFor='weight'>Weight (lbs):</label>
-        <input
-            type='text'
-            id='weight'
-            value={weight}
-            onChange={handleWeightChange}
-        />
-
-        <label htmlFor='age'>Age:</label>
-        <input
-            type='text'
-            id='age'
-            value={age}
-            onChange={handleAgeChange}
-        />
-
-        <div className='mt-5 mb-5'>
+    <form className='mt-5 mb-5'>
+        <div className='flx'>
+            <div className='f_sb'>
+                <label htmlFor='breed'>Breed:</label>
+                <input
+                    type='text'
+                    id='breed'
+                    value={breed}
+                    onChange={(e) => setBreed(e.target.value)}
+                />
+            </div>
+            <div className='f_sb'>
+                <label htmlFor='weight'>Weight (lbs):</label>
+                <input
+                    type='text'
+                    id='weight'
+                    value={weight}
+                    onChange={handleWeightChange}
+                />
+            </div>
+            <div className='f_sb'>
+                <label htmlFor='age'>Age:</label>
+                <input
+                    type='text'
+                    id='age'
+                    value={age}
+                    onChange={handleAgeChange}
+                />
+            </div>
+        </div>
+        <div className='mt-5 mb-5 flx'>
             <button type='button' onClick={handleCalculate}>Calculate</button>
         </div>
     </form>

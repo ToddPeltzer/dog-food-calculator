@@ -56,19 +56,6 @@ button {
     border-radius: 32px;
 }
 
-/* .paw {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    fill: #F4ECD4;
-    z-index: -1;
-} */
-
 .form-cntnr {
     position: relative;
 }

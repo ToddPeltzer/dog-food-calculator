@@ -1,0 +1,16 @@
+{
+  "id": "mig_cmm9o579cie0mt7i42mg",
+  "parentID": "mig_cmm9o379cie0mt7i42lg",
+  "checksum": "1:321a3d5e8a63c51ee80abd6b9856a36f3bf1642ab852a7499ccd740877773201",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "dogage",
+          "type": "string"
+        },
+        "table": "Profile"
+      }
+    }
+  ]
+}

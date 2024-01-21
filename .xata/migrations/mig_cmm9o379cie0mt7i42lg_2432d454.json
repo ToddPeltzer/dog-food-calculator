@@ -1,0 +1,16 @@
+{
+  "id": "mig_cmm9o379cie0mt7i42lg",
+  "parentID": "mig_cmm9o179cie0mt7i42kg",
+  "checksum": "1:2432d45489e394cc3f70d351c2ee43b796aa0cd8cf0d5787e5b9cc047112c826",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "dogweight",
+          "type": "string"
+        },
+        "table": "Profile"
+      }
+    }
+  ]
+}

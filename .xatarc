@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Todd-Peltzer-s-workspace-5e5e54.us-west-2.xata.sh/db/we-feed-raw",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}

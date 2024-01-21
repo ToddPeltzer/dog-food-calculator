@@ -1,0 +1,16 @@
+{
+  "id": "mig_cmm9o179cie0mt7i42kg",
+  "parentID": "mig_cmm9nun9cie0mt7i42jg",
+  "checksum": "1:ed06bbe03983ba470e5af7ba3f900405d03082899217b18c9e9fcbc8e9e9b5d8",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "dogbreed",
+          "type": "string"
+        },
+        "table": "Profile"
+      }
+    }
+  ]
+}

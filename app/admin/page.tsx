@@ -8,7 +8,13 @@ export default async function Admin() {
   return (
     <main>
         <h1>Admin Page</h1>
-        {profiles.map((profile) => <p key={profile.firstname}>{profile.firstname}</p>)}
+        <ul>
+          {profiles.map((profile) => 
+            <li key={profile.id}>
+              <a href={profile.id}>{profile.firstname}</a>
+            </li>
+          )}
+        </ul>
     </main>
   )
 }

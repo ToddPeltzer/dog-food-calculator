@@ -18,6 +18,9 @@ export default function NavBar({}: NavBarProps) {
         <li className="flex items-center ml-5">
           <Link href="/calculator">Calculator</Link>
         </li>
+        <li className="flex items-center ml-5">
+          <Link href="/admin">Admin</Link>
+        </li>
         {isLoaded && user && (
             <li className="flex items-center ml-5">
                 <UserButton afterSignOutUrl="/" />

@@ -9,6 +9,7 @@ export default async function ExistingProfile({ params }: { params: { id: string
 
   return (
     <main>
+        <h1>Update User Page</h1>
         <UpdateUser
           record={record}
         />

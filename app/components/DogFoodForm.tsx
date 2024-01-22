@@ -39,7 +39,7 @@ const DogFoodForm: React.FC<DogFormProps> = ({ onCalculate }) => {
         <form className='mt-5 mb-5'>
             <div className='blk'>
                 <div className='input-cntnr'>
-                    <label htmlFor='breed'>Name:</label>
+                    <label htmlFor='breed'>Dog Name:</label>
                     <input
                         type='text'
                         id='breed'

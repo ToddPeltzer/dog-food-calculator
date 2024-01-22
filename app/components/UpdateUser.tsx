@@ -1,9 +1,8 @@
 'use client'
 
 import NewUser from "@/app/components/NewUserForm";
-import { getXataClient } from "@/src/xata";
-import { Identifiable } from "@xata.io/client";
 import { useState } from "react";
+import { useRouter } from 'next/navigation'
 
 interface FormData {
     firstname: string;
@@ -16,6 +15,8 @@ interface FormData {
 
 export default function UpdateUser({ record }: any) {
   
+  const router = useRouter()
+
   const [formData, setFormData] = useState<FormData>({
     firstname: record?.firstname || "",
     lastname: record?.lastname || "",
@@ -40,7 +41,6 @@ export default function UpdateUser({ record }: any) {
       [name]: value,
     }));
   };
-
 
   return (
     <main>

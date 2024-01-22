@@ -9,8 +9,9 @@ export default async function Admin() {
     <main>
       <h1>Admin Page</h1>
       <div>
-        <Link href="/admin/profile/new-user">New User</Link>
+        <Link className="btn-stl" href="/admin/profile/new-user">New User</Link>
       </div>
+      <h2>List of Users</h2>
       <ul>
         {profiles.map((profile) => (
           <li key={profile.id}>

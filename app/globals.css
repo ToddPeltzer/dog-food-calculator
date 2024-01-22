@@ -16,6 +16,21 @@ main {
     flex-direction: column;
 }
 
+h1 {
+    font-size: x-large;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: larger;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: large;
+    font-weight: 400;
+}
+
 main h1 {
     text-align: center;
     text-wrap: pretty;
@@ -46,7 +61,8 @@ select {
     align-items: center;
 }
 
-button {
+button,
+.btn-stl {
     color: #FFFFFF;
     background-color: #EC3925!important;
     padding: 16px 32px;
@@ -54,6 +70,11 @@ button {
     font-weight: 500;
     border-radius: 32px;
     transition: background-color 0.3s ease 0s;
+}
+
+.btn-stl {
+    display: block;
+    margin: 2rem;
 }
 
 .form-cntnr {
@@ -83,7 +104,8 @@ button {
 }
 
 @media (min-width: 1024px) {
-    button:is(:hover, :focus) {
+    button:is(:hover, :focus),
+    .btn-stl:is(:hover, :focus) {
         background-color: #EE4C3B!important;
     }
 }

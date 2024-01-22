@@ -1,6 +1,5 @@
 import { getXataClient } from '@/src/xata';
 import useDogsQuery from '@/app/components/useDogsQuery';
-import { Identifiable } from '@xata.io/client';
 import { useRouter } from 'next/navigation'
 
 interface NewUserProps {
@@ -36,9 +35,7 @@ export default function NewUser({ updateUser, formData, selectedBreed, handleCha
     }
 
     try {
-      // Create a new user record in the database
-      console.log({...formData,
-        dogbreed: selectedBreed,})
+      // Create a new user record or update existing one in the database
       const record = updateUser && id ? await xata.db.Profile.update(id,{
         ...formData,
         dogbreed: selectedBreed,
@@ -46,12 +43,24 @@ export default function NewUser({ updateUser, formData, selectedBreed, handleCha
       : await xata.db.Profile.create({
         ...formData,
         dogbreed: selectedBreed,
-      })} catch (error) {
+      })
+    } catch (error) {
       console.error('Error creating user:', error);
     }
-    router.push('/admin')
+    router.replace('/admin')
   };
 
+  const handleDelete = async () => {
+    try {
+      if (id) {
+        await xata.db.Profile.delete(id);
+      }
+    } catch (error) {
+      console.error('Error deleting user:', error);
+    }
+    router.replace('/admin')
+  };
+  
   return (
     <div>
       <form onSubmit={handleSubmit} className='mt-5 mb-5'>
@@ -123,10 +132,16 @@ export default function NewUser({ updateUser, formData, selectedBreed, handleCha
           </div>
         </div>
         <div className='mt-5 mb-5 flx btn-cntnr'>
-          <button type="submit">{
-            !updateUser ? "Create User" : "Update User"
-          }</button>
+          <button type="submit">{!updateUser ? "Create User" : "Update User"}</button>
         </div>
+        {
+          !updateUser ?
+            ""
+          :
+          <div className='mt-5 mb-5 flx btn-cntnr'>
+            <button onClick={handleDelete} type="button">Delete User</button>
+          </div>
+        }
       </form>
     </div>
   );

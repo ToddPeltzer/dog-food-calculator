@@ -35,11 +35,12 @@ const DatabaseClient = buildClient();
 const defaultOptions = {
   databaseURL:
     "https://Todd-Peltzer-s-workspace-5e5e54.us-west-2.xata.sh/db/we-feed-raw",
+    apiKey: 'xau_vjg4TvtOvnifujL4LStP25cQuPj1XU3Xc'
 };
 
 export class XataClient extends DatabaseClient<DatabaseSchema> {
   constructor(options?: BaseClientOptions) {
-    super({ ...defaultOptions, ...options }, tables);
+    super({ ...defaultOptions, ...options, enableBrowser: true }, tables);
   }
 }
 

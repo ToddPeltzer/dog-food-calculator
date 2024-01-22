@@ -1,9 +1,19 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import DogFoodForm from '../components/DogFoodForm'
 
 const Calculator: React.FC = () => {
+
+    // Get the initial value of numCalc from session storage or use 0 if it doesn't exist
+    const initialNumCalc = parseInt(sessionStorage.getItem('numCalc') || '0', 10);
+
+    const [numCalc , setNumCalc] = useState<number>(initialNumCalc)
+    
+    // Update session storage whenever numCalc changes
+    useEffect(() => {
+        sessionStorage.setItem('numCalc', numCalc.toString());
+    }, [numCalc]);
 
     const [foodAmountStatement, setFoodAmountStatement] = useState<string>('')
     
@@ -24,6 +34,7 @@ const Calculator: React.FC = () => {
         }
 
         setFoodAmountStatement(`${name}, your ${age} year old ${breed}, needs to eat around ${foodAmount} of raw food per day`)
+        setNumCalc((prevState: number) => prevState + 1)
 
   };
 
@@ -34,6 +45,7 @@ const Calculator: React.FC = () => {
         {foodAmountStatement && (
           <h4>{foodAmountStatement}</h4>
       )}
+      {!numCalc ? "" : <p>You ran the calculator {numCalc} time(s) in this session.</p>}
     </main>
   )
 }
